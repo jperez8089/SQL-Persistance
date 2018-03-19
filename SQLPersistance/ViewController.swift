@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var database: OpaquePointer? = nil 
-        
+        var database: OpaquePointer? = nil
+        // Left off at page 443
         
         
         
