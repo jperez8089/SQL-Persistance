@@ -14,6 +14,7 @@
 		4B258C99206051DA00A1E67C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B258C97206051DA00A1E67C /* LaunchScreen.storyboard */; };
 		4B258CA4206051DA00A1E67C /* SQLPersistanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B258CA3206051DA00A1E67C /* SQLPersistanceTests.swift */; };
 		4B258CAF206051DA00A1E67C /* SQLPersistanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B258CAE206051DA00A1E67C /* SQLPersistanceUITests.swift */; };
+		4B258CBE2060547D00A1E67C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B258CBD2060547D00A1E67C /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		4B258CAA206051DA00A1E67C /* SQLPersistanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQLPersistanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B258CAE206051DA00A1E67C /* SQLPersistanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLPersistanceUITests.swift; sourceTree = "<group>"; };
 		4B258CB0206051DA00A1E67C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B258CBD2060547D00A1E67C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		4B258CBF2060561B00A1E67C /* SQLPersistance-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SQLPersistance-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B258CBE2060547D00A1E67C /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 				4B258CA2206051DA00A1E67C /* SQLPersistanceTests */,
 				4B258CAD206051DA00A1E67C /* SQLPersistanceUITests */,
 				4B258C8C206051DA00A1E67C /* Products */,
+				4B258CBC2060547D00A1E67C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +108,7 @@
 				4B258C95206051DA00A1E67C /* Assets.xcassets */,
 				4B258C97206051DA00A1E67C /* LaunchScreen.storyboard */,
 				4B258C9A206051DA00A1E67C /* Info.plist */,
+				4B258CBF2060561B00A1E67C /* SQLPersistance-Bridging-Header.h */,
 			);
 			path = SQLPersistance;
 			sourceTree = "<group>";
@@ -123,6 +129,14 @@
 				4B258CB0206051DA00A1E67C /* Info.plist */,
 			);
 			path = SQLPersistanceUITests;
+			sourceTree = "<group>";
+		};
+		4B258CBC2060547D00A1E67C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B258CBD2060547D00A1E67C /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +207,7 @@
 				TargetAttributes = {
 					4B258C8A206051DA00A1E67C = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					4B258C9E206051DA00A1E67C = {
@@ -414,10 +429,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SQLPersistance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.javier.perez.SQLPersistance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SQLPersistance/SQLPersistance-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -426,10 +444,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SQLPersistance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.javier.perez.SQLPersistance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SQLPersistance/SQLPersistance-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
